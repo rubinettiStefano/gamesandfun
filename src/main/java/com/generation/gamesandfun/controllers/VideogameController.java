@@ -72,7 +72,7 @@ public class VideogameController
     }
 
     @DeleteMapping("/videogames/{id}")
-    public ResponseEntity<?> delete(@PathVariable Integer id,@RequestBody Videogame entity) 
+    public ResponseEntity<?> delete(@PathVariable Integer id) 
     {
         Optional<Videogame> op = repo.findById(id);
         if(op.isPresent())
