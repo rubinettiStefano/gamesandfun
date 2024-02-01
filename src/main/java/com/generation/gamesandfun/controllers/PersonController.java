@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +27,12 @@ public class PersonController
 
     @PostMapping("/people")
     public Person insertPerson(@RequestBody Person p) {
+        return repo.save(p);
+    }
+
+    @PutMapping("/people/{id}")
+    public Person insertPerson(@RequestBody Person p,@PathVariable Integer id) {
+        p.setId(id);
         return repo.save(p);
     }
     

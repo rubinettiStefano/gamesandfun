@@ -64,6 +64,7 @@ public class VideogameController
         if(op.isPresent())
         {
             entity.setId(id);
+            entity.setSoftware_house(op.get().getSoftware_house());
             return new ResponseEntity<Videogame>(repo.save(entity),HttpStatus.OK);
         }
         else
