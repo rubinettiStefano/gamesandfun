@@ -12,13 +12,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.generation.gamesandfun.model.entities.SoftwareHouse;
 import com.generation.gamesandfun.model.entities.Videogame;
 import com.generation.gamesandfun.model.repositories.SoftwareHouseRepository;
 import com.generation.gamesandfun.model.repositories.VideogameRepository;
 
-
+@RestController
 public class VideogameController 
 {
     @Autowired
