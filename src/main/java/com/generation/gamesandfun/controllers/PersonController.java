@@ -3,6 +3,7 @@ package com.generation.gamesandfun.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,9 +32,14 @@ public class PersonController
     }
 
     @PutMapping("/people/{id}")
-    public Person insertPerson(@RequestBody Person p,@PathVariable Integer id) {
+    public Person updatePerson(@RequestBody Person p,@PathVariable Integer id) {
         p.setId(id);
         return repo.save(p);
+    }
+
+    @DeleteMapping("/people/{id}")
+    public void  deletePerson(@PathVariable Integer id) {
+         repo.deleteById(id);
     }
     
 }
