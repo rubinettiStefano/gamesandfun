@@ -77,6 +77,7 @@ public class VideogameController
         Optional<Videogame> op = repo.findById(id);
         if(op.isPresent())
         {
+            repo.deleteById(id);
             return new ResponseEntity<String>("",HttpStatus.OK);
         }
         else
