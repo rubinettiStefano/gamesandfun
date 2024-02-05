@@ -1,16 +1,9 @@
 package com.generation.gamesandfun.model.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-public class PersonDtoR 
+@SuperBuilder
+public class PersonDtoR extends PersonDtoBase
 {
-    private String name,surname;
-    private int age;
+
 }

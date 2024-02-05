@@ -1,8 +1,6 @@
 package com.generation.gamesandfun.model.dto;
 
-import java.util.List;
-
-import com.generation.gamesandfun.model.entities.Document;
+import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,9 +11,8 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class PersonDtoWFull extends PersonDtoBase
+public class DocumentDtoBase
 {
-    private Integer id;
-
-    private List<Document> documents;
+    private LocalDate release_date,expiring_date;
+    private String type,number;
 }
