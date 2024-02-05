@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.generation.gamesandfun.model.dto.PersonDtoR;
+import com.generation.gamesandfun.model.dto.PersonDtoWFull;
+import com.generation.gamesandfun.model.dto.PersonDtoWNoDocuments;
+import com.generation.gamesandfun.model.dtoservices.PersonConverter;
 import com.generation.gamesandfun.model.entities.Person;
 import com.generation.gamesandfun.model.repositories.PersonRepository;
 
@@ -20,16 +24,34 @@ public class PersonController
 {
     @Autowired
     PersonRepository repo;
+    @Autowired
+    PersonConverter conv;
 
     @GetMapping("/people")
-    public List<Person> getAllPeople() {
-        return repo.findAll();
+    public List<PersonDtoWNoDocuments> getAllPeopleNoDocuments() 
+    {
+        return repo.findAll()
+               .stream()
+               .map(e -> conv.personToDtoWNoDocuments(e))
+               .toList();
     }
 
-    @PostMapping("/people")
-    public Person insertPerson(@RequestBody Person p) {
-        return repo.save(p);
+    @GetMapping("/people/full")
+    public List<PersonDtoWFull> getAllPeopleFull() 
+    {
+        return  repo.findAll()
+                .stream()
+                .map(e -> conv.personToDtoWFull(e))
+                .toList();
     }
+
+    @PostMapping("/people") 
+    public Person insertPerson(@RequestBody PersonDtoR dto) {
+        return repo.save(conv.dtoRToPerson(dto));
+    }
+
+
+
 
     @PutMapping("/people/{id}")
     public Person updatePerson(@RequestBody Person p,@PathVariable Integer id) {
