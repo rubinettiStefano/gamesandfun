@@ -5,10 +5,10 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.generation.gamesandfun.model.dto.DocumentDtoRpost;
-import com.generation.gamesandfun.model.dto.DocumentDtoRput;
-import com.generation.gamesandfun.model.dto.DocumentDtoWNoPerson;
-import com.generation.gamesandfun.model.dto.DocumentDtoWPerson;
+import com.generation.gamesandfun.model.dto.document.DocumentDtoRpost;
+import com.generation.gamesandfun.model.dto.document.DocumentDtoRput;
+import com.generation.gamesandfun.model.dto.document.DocumentDtoWNoPerson;
+import com.generation.gamesandfun.model.dto.document.DocumentDtoWPerson;
 import com.generation.gamesandfun.model.entities.Document;
 import com.generation.gamesandfun.model.entities.Person;
 import com.generation.gamesandfun.model.repositories.PersonRepository;

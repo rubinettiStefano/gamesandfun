@@ -1,8 +1,6 @@
-package com.generation.gamesandfun.model.dto;
+package com.generation.gamesandfun.model.dto.document;
 
-import java.util.List;
-
-import com.generation.gamesandfun.model.entities.Document;
+import com.generation.gamesandfun.model.entities.Person;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,9 +11,8 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class PersonDtoWFull extends PersonDtoBase
+public class DocumentDtoWPerson extends DocumentDtoBase
 {
     private Integer id;
-
-    private List<Document> documents;
+    private Person owner;
 }

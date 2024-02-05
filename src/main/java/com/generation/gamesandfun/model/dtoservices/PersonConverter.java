@@ -3,9 +3,9 @@ package com.generation.gamesandfun.model.dtoservices;
 
 import org.springframework.stereotype.Service;
 
-import com.generation.gamesandfun.model.dto.PersonDtoR;
-import com.generation.gamesandfun.model.dto.PersonDtoWFull;
-import com.generation.gamesandfun.model.dto.PersonDtoWNoDocuments;
+import com.generation.gamesandfun.model.dto.person.PersonDtoR;
+import com.generation.gamesandfun.model.dto.person.PersonDtoWFull;
+import com.generation.gamesandfun.model.dto.person.PersonDtoWNoDocuments;
 import com.generation.gamesandfun.model.entities.Person;
 
 //@Component

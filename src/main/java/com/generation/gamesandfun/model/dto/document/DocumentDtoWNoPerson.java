@@ -1,4 +1,4 @@
-package com.generation.gamesandfun.model.dto;
+package com.generation.gamesandfun.model.dto.document;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

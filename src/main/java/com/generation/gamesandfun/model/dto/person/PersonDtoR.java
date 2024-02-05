@@ -1,4 +1,4 @@
-package com.generation.gamesandfun.model.dto;
+package com.generation.gamesandfun.model.dto.person;
 
 import lombok.experimental.SuperBuilder;
 

@@ -1,4 +1,4 @@
-package com.generation.gamesandfun.model.dto;
+package com.generation.gamesandfun.model.dto.person;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,9 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class PersonDtoWNoDocuments  extends PersonDtoBase
+public class PersonDtoBase 
 {
-    private Integer id;
+    private String name,surname;
+    private int age;
+
 }
