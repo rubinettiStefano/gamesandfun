@@ -9,7 +9,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class PersonDtoBase 
+public abstract class PersonDtoBase 
 {
     private String name,surname;
     private int age;

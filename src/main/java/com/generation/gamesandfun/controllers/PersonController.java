@@ -17,6 +17,8 @@ import com.generation.gamesandfun.model.dto.person.PersonDtoWNoDocuments;
 import com.generation.gamesandfun.model.dtoservices.PersonConverter;
 import com.generation.gamesandfun.model.entities.Person;
 import com.generation.gamesandfun.model.repositories.PersonRepository;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @RestController
@@ -50,7 +52,11 @@ public class PersonController
         return repo.save(conv.dtoRToPerson(dto));
     }
 
-
+    @GetMapping("/people/{id}")
+    public PersonDtoWFull getMethodName(@PathVariable Integer id) {
+        return conv.personToDtoWFull(repo.findById(id).get());
+    }
+    
 
 
     @PutMapping("/people/{id}")
