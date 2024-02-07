@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.generation.gamesandfun.model.dto.person.PersonDtoR;
 import com.generation.gamesandfun.model.dto.person.PersonDtoWFull;
 import com.generation.gamesandfun.model.dto.person.PersonDtoWNoDocuments;
+import com.generation.gamesandfun.model.dto.person.PersonDtoWWithHouses;
+import com.generation.gamesandfun.model.dto.person.PersonDtoWWithReservations;
+import com.generation.gamesandfun.model.dto.person.PersonDtoWWithSuperReservation;
 import com.generation.gamesandfun.model.dtoservices.PersonConverter;
 import com.generation.gamesandfun.model.entities.Person;
 import com.generation.gamesandfun.model.repositories.PersonRepository;
@@ -55,6 +58,21 @@ public class PersonController
     @GetMapping("/people/{id}")
     public PersonDtoWFull getMethodName(@PathVariable Integer id) {
         return conv.personToDtoWFull(repo.findById(id).get());
+    }
+
+    @GetMapping("/people/{id}/houses")
+    public PersonDtoWWithHouses getPersonWithHouses(@PathVariable Integer id) {
+        return conv.personToDtoWWithHouses(repo.findById(id).get());
+    }
+
+    @GetMapping("/people/{id}/reservations")
+    public PersonDtoWWithReservations getPersonWithReservations(@PathVariable Integer id) {
+        return conv.personToDtoWWithReservations(repo.findById(id).get());
+    }
+
+    @GetMapping("/people/{id}/reservationsaug")
+    public PersonDtoWWithSuperReservation getPersonWithReservationsAugmented(@PathVariable Integer id) {
+        return conv.personToDtoWWithSuperReservation(repo.findById(id).get());
     }
     
 
