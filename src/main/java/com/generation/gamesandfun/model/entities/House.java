@@ -16,25 +16,19 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Person 
+public class House 
 {
-    @Id
+     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name,surname;
-    private int age;
+    private String city,address; 
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "owner",fetch = FetchType.EAGER)
-    private List<Document> documents;
-
-    @JsonIgnore
-    @OneToMany(mappedBy = "guest",cascade = CascadeType.REMOVE,fetch = FetchType.EAGER)
+     @JsonIgnore
+    @OneToMany(mappedBy = "house",fetch = FetchType.EAGER)
     private List<Reservation> reservations;
 }
