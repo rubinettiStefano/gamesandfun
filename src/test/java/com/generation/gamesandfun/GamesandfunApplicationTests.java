@@ -1,5 +1,6 @@
 package com.generation.gamesandfun;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -52,17 +53,40 @@ class GamesandfunApplicationTests {
 		// dRepo.save(d1);
 		// dRepo.save(d2);
 
-		Person stefano = repo.findById(13).get();
+		// Person stefano = repo.findById(13).get();
 		
-		List<Reservation> miePrenotazioni = stefano.getReservations();
-		List<House> caseDoveSonoStato = stefano.getReservations().stream().map(r->r.getHouse()).toList();
-		System.out.println(miePrenotazioni);
+		// List<Reservation> miePrenotazioni = stefano.getReservations();
+		// List<House> caseDoveSonoStato = stefano.getReservations().stream().map(r->r.getHouse()).toList();
+		// System.out.println(miePrenotazioni);
 
-		House casaMilano = hRepo.findById(1).get();
+		// House casaMilano = hRepo.findById(1).get();
 
-		List<Person> personeCheSonoStateAMilano = casaMilano.getReservations().stream().map(r->r.getGuest()).toList();
-		System.out.println(miePrenotazioni);
+		// List<Person> personeCheSonoStateAMilano = casaMilano.getReservations().stream().map(r->r.getGuest()).toList();
+		// System.out.println(miePrenotazioni);
 
+		List<Person> noi = new ArrayList<Person>();
+
+	
+
+		noi.add(Person.builder()
+		.name("Irene")
+		.surname("Alieksieieva")
+		.age(28)
+		.build());
+
+		noi.add(Person.builder()
+		.name("Maria Rosaria")
+		.surname("Casciato")
+		.age(29)
+		.build());
+
+		noi.add(Person.builder()
+		.name("Gaetano")
+		.surname("Pierro")
+		.age(26)
+		.build());
+
+		repo.saveAll(noi);
 	}
 
 }

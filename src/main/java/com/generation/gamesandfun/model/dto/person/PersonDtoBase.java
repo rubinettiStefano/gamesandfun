@@ -14,4 +14,9 @@ public abstract class PersonDtoBase
     private String name,surname;
     private int age;
 
+    // {
+    //     "name":"Stefano",
+    //     "surname":"Rubinetti",
+    //     "age":28
+    // }
 }
