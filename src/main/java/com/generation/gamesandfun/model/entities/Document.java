@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Document 
 {
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private LocalDate release_date,expiring_date;

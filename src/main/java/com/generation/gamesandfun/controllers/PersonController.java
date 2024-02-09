@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.generation.gamesandfun.model.dto.person.PersonDtoR;
 import com.generation.gamesandfun.model.dto.person.PersonDtoWFull;
 import com.generation.gamesandfun.model.dto.person.PersonDtoWNoDocuments;
+import com.generation.gamesandfun.model.dto.person.PersonDtoWReserHouse;
 import com.generation.gamesandfun.model.dto.person.PersonDtoWWithHouses;
 import com.generation.gamesandfun.model.dto.person.PersonDtoWWithReservations;
 import com.generation.gamesandfun.model.dto.person.PersonDtoWWithSuperReservation;
@@ -68,6 +69,11 @@ public class PersonController
     @GetMapping("/people/{id}/reservations")
     public PersonDtoWWithReservations getPersonWithReservations(@PathVariable Integer id) {
         return conv.personToDtoWWithReservations(repo.findById(id).get());
+    }
+
+    @GetMapping("/people/{id}/prenotations")
+    public PersonDtoWReserHouse getPPersonDtoWReserHouse(@PathVariable Integer id) {
+        return conv.personToDtoWReserHouse(repo.findById(id).get());
     }
 
     @GetMapping("/people/{id}/reservationsaug")

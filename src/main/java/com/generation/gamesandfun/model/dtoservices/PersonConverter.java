@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.generation.gamesandfun.model.dto.person.PersonDtoR;
 import com.generation.gamesandfun.model.dto.person.PersonDtoWFull;
 import com.generation.gamesandfun.model.dto.person.PersonDtoWNoDocuments;
+import com.generation.gamesandfun.model.dto.person.PersonDtoWReserHouse;
 import com.generation.gamesandfun.model.dto.person.PersonDtoWWithHouses;
 import com.generation.gamesandfun.model.dto.person.PersonDtoWWithReservations;
 import com.generation.gamesandfun.model.dto.person.PersonDtoWWithSuperReservation;
@@ -91,6 +92,20 @@ public class PersonConverter
                 .id(e.getId())
                 //.reservations(e.getReservations().stream().map(r->rConv.reservationToDtoWaugmented(r)).toList())
                 .reservations(convertToAugmented(e))
+                .build();
+    }
+
+
+    public PersonDtoWReserHouse personToDtoWReserHouse(Person e)
+    {
+        return  PersonDtoWReserHouse
+                .builder()
+                .name(e.getName())
+                .surname(e.getSurname())
+                .age(e.getAge())
+                .id(e.getId())
+                //.reservations(e.getReservations().stream().map(r->rConv.reservationToDtoWaugmented(r)).toList())
+                .prenotations(e.getReservations().stream().map(r-> rConv.reservationToDtoWHouse(r)).toList())
                 .build();
     }
 

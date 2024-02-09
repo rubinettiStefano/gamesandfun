@@ -1,15 +1,12 @@
 package com.generation.gamesandfun;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.generation.gamesandfun.model.entities.House;
-import com.generation.gamesandfun.model.entities.Person;
-import com.generation.gamesandfun.model.entities.Reservation;
+import com.generation.gamesandfun.model.entities.Document;
 import com.generation.gamesandfun.model.repositories.DocumentRepository;
 import com.generation.gamesandfun.model.repositories.HouseRepository;
 import com.generation.gamesandfun.model.repositories.PersonRepository;
@@ -64,29 +61,31 @@ class GamesandfunApplicationTests {
 		// List<Person> personeCheSonoStateAMilano = casaMilano.getReservations().stream().map(r->r.getGuest()).toList();
 		// System.out.println(miePrenotazioni);
 
-		List<Person> noi = new ArrayList<Person>();
+		// List<Person> noi = new ArrayList<Person>();
 
 	
 
-		noi.add(Person.builder()
-		.name("Irene")
-		.surname("Alieksieieva")
-		.age(28)
-		.build());
+		// noi.add(Person.builder()
+		// .name("Irene")
+		// .surname("Alieksieieva")
+		// .age(28)
+		// .build());
 
-		noi.add(Person.builder()
-		.name("Maria Rosaria")
-		.surname("Casciato")
-		.age(29)
-		.build());
+		// noi.add(Person.builder()
+		// .name("Maria Rosaria")
+		// .surname("Casciato")
+		// .age(29)
+		// .build());
 
-		noi.add(Person.builder()
-		.name("Gaetano")
-		.surname("Pierro")
-		.age(26)
-		.build());
+		// noi.add(Person.builder()
+		// .name("Gaetano")
+		// .surname("Pierro")
+		// .age(26)
+		// .build());
 
-		repo.saveAll(noi);
+		// repo.saveAll(noi);
+		List<Document> docs = dRepo.findByOwnerId(14);
+		System.out.println("a");
 	}
 
 }
